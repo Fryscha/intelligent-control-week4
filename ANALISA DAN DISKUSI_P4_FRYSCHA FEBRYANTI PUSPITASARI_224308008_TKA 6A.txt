@@ -1,0 +1,47 @@
+Nama		 	:  	Fryscha Febryanti Puspitasari
+NIM 	 		:  	224308008
+Kelas 	 		:  	TKA 6A
+Akun Github (Tautan) 	:  	https://github.com/Fryscha
+Student Lab Assistant 	:  	Yulia Brilianty
+
+Analisis Hasil:
+a. Bagaimana performa agen dalam mengontrol environment CartPole?
+Jawab:
+Agen yang diimplementasikan menggunakan algoritma Deep Q-Network (DQN) menunjukkan performa yang cukup baik dalam mengontrol environment CartPole. Dalam pengujian, agen mampu mempertahankan tiang dalam posisi tegak selama beberapa episode, dengan skor yang meningkat seiring dengan bertambahnya episode. Skor maksimum yang dicapai oleh agen dalam pengujian adalah jumlah langkah yang berhasil diambil sebelum tiang jatuh. Dengan pengaturan epsilon yang rendah (0.01) selama pengujian, agen lebih cenderung untuk mengeksploitasi pengetahuan yang telah dipelajari daripada melakukan eksplorasi, yang menunjukkan bahwa agen telah belajar strategi yang efektif untuk mengontrol tiang.
+
+b. Bagaimana perubahan parameter (misal: gamma, epsilon, learning rate) mempengaruhi kinerja agen?
+Jawab:
+Perubahan parameter seperti gamma, epsilon, dan learning rate memiliki dampak signifikan terhadap kinerja agen.
+Gamma: Parameter ini menentukan seberapa jauh agen mempertimbangkan reward masa depan. Nilai gamma yang lebih tinggi (mendekati 1) membuat agen lebih fokus pada reward jangka panjang, sedangkan nilai yang lebih rendah membuat agen lebih fokus pada reward jangka pendek. Dalam konteks CartPole, gamma yang lebih tinggi dapat membantu agen belajar strategi yang lebih baik untuk menjaga tiang tetap tegak.
+Epsilon: Parameter ini mengontrol tingkat eksplorasi agen. Nilai epsilon yang tinggi memungkinkan agen untuk lebih banyak mengeksplorasi tindakan yang berbeda, yang penting pada tahap awal pelatihan. Namun, saat pelatihan berlangsung, epsilon harus dikurangi untuk meningkatkan eksploitasi. Jika epsilon terlalu rendah terlalu cepat, agen mungkin tidak menemukan strategi optimal.
+Learning Rate: Learning rate menentukan seberapa besar perubahan yang dilakukan pada bobot model berdasarkan kesalahan yang dihitung. Learning rate yang terlalu tinggi dapat menyebabkan model tidak stabil, sedangkan yang terlalu rendah dapat memperlambat proses pelatihan. Penyesuaian learning rate yang tepat sangat penting untuk mencapai konvergensi yang baik.
+
+c. Apa tantangan yang muncul selama pelatihan agen RL?
+Jawab:
+Beberapa tantangan yang muncul selama pelatihan agen RL antara lain:
+Stabilitas Pelatihan: Pelatihan agen RL sering kali tidak stabil, terutama ketika menggunakan jaringan saraf. Fluktuasi dalam reward dan pembaruan bobot dapat menyebabkan model tidak konvergen.
+Eksplorasi vs. Eksploitasi: Menemukan keseimbangan antara eksplorasi dan eksploitasi adalah tantangan utama. Terlalu banyak eksplorasi dapat menghambat pembelajaran, sementara terlalu banyak eksploitasi dapat menyebabkan agen terjebak dalam strategi suboptimal.
+Pengaturan Hyperparameter: Memilih hyperparameter yang tepat (seperti gamma, epsilon, dan learning rate) sangat penting dan sering kali memerlukan eksperimen yang ekstensif.
+Keterbatasan Memori: Agen DQN menggunakan experience replay, yang memerlukan memori untuk menyimpan pengalaman. Keterbatasan memori dapat membatasi ukuran batch yang dapat digunakan untuk pelatihan.
+
+Diskusi:
+a. Apa perbedaan utama antara Reinforcement Learning dan metode supervised learning dalam sistem kendali?
+Jawab:
+Perbedaan utama antara Reinforcement Learning (RL) dan metode supervised learning terletak pada cara agen belajar dari data. Dalam supervised learning, model dilatih menggunakan dataset yang berisi pasangan input-output yang benar, di mana tujuan model adalah memprediksi output yang benar untuk input yang diberikan. Sebaliknya, dalam RL, agen belajar melalui interaksi dengan lingkungan, di mana tidak ada pasangan input-output yang eksplisit. Agen menerima umpan balik dalam bentuk reward atau penalty berdasarkan tindakan yang diambil, dan tujuan agen adalah memaksimalkan reward kumulatif. Ini membuat RL lebih cocok untuk masalah di mana keputusan harus diambil secara berurutan dan hasil dari tindakan tidak selalu langsung terlihat.
+
+b. Bagaimana strategi eksplorasi (exploration) dan eksploitasi (exploitation) dapat dioptimalkan pada agen RL?
+Jawab:
+Strategi eksplorasi dan eksploitasi dapat dioptimalkan dengan beberapa pendekatan:
+Epsilon Decay: Mengurangi nilai epsilon secara bertahap selama pelatihan untuk meningkatkan eksploitasi seiring waktu. Ini memungkinkan agen untuk mengeksplorasi lebih banyak di awal dan beralih ke eksploitasi saat pengetahuan meningkat.
+Upper Confidence Bound (UCB): Menggunakan pendekatan berbasis statistik untuk memilih tindakan yang tidak hanya mempertimbangkan nilai Q tetapi juga ketidakpastian dalam estimasi tersebut.
+Thompson Sampling: Menggunakan sampling probabilistik untuk memilih tindakan berdasarkan distribusi posterior dari nilai Q, yang memungkinkan agen untuk mengeksplorasi tindakan yang kurang diketahui.
+Prioritized Experience Replay: Menggunakan pengalaman yang lebih informatif untuk pelatihan, sehingga agen dapat belajar lebih cepat dari pengalaman yang lebih berharga.
+
+c. Potensi aplikasi lain dari RL dalam sistem kendali nyata apa saja yang dapat diimplementasikan?
+Jawab:
+Reinforcement Learning memiliki potensi aplikasi yang luas dalam sistem kendali nyata, antara lain:
+Robotika: Mengontrol robot untuk melakukan tugas-tugas kompleks seperti navigasi, pengambilan objek, dan interaksi dengan manusia.
+Sistem Kendali Otomatis: Mengoptimalkan kendali dalam sistem seperti HVAC (Heating, Ventilation, and Air Conditioning) untuk efisiensi energi.
+Pengendalian Kendaraan Otonom: Mengembangkan algoritma untuk mengendalikan kendaraan otonom dalam berbagai kondisi lalu lintas dan cuaca.
+Permainan dan Simulasi: Menerapkan RL untuk mengembangkan agen yang dapat bermain game atau berinteraksi dalam simulasi dengan cara yang lebih manusiawi.
+Sistem Keuangan: Menggunakan RL untuk mengoptimalkan strategi perdagangan dan manajemen portofolio dalam pasar keuangan.
