@@ -18,7 +18,7 @@ def visualize_episode():
     state, _ = env.reset()
     state = np.reshape(state, [1, state_size])
     
-    for time in range(5000):
+    for time in range(2000):
         frame = env.render()
         frames.append(frame)  # Simpan frame untuk animasi
         
